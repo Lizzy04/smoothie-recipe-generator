@@ -1,6 +1,12 @@
 function displayRecipe(response) {
+  let recipe = response.data.answer;
+
+  //Remove triple backticks
+  recipe = recipe.replace(/```(?:html)?/gi, "").trim();
+  recipe = recipe.replace(/```/g, "").trim();
+
   new Typewriter("#recipe", {
-    strings: response.data.answer,
+    strings: recipe,
     autoStart: true,
     delay: 1,
     cursor: "",
@@ -17,8 +23,12 @@ function generateRecipe(event) {
   let prompt = `User instructions: Generate a smoothie recipe flavor ${instructionsInput.value}`;
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
+  let recipeElement = document.querySelector("#recipe");
+  recipeElement.classList.remove("hidden");
+  recipeElement.innerHTML = `<div class="generating">⏳Generating a ${instructionsInput.value} flavored smoothie recipe</div>`;
+
   axios.get(apiUrl).then(displayRecipe);
 }
 
-let recipeElement = document.querySelector("#recipe-generator-form");
-recipeElement.addEventListener("submit", generateRecipe);
+let recipeFormElement = document.querySelector("#recipe-generator-form");
+recipeFormElement.addEventListener("submit", generateRecipe);

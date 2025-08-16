@@ -9,16 +9,19 @@
     <title>AI Smoothie Generator</title>
   </head>
   <body>
-    <div class="recipe-container">
+    <div class="container">
     <header>
     <h1>AI Smoothie Generator</h1>
     </header>
     <main>
+     <div class="form-container">
         <form id="recipe-generator-form">
             <input type="text" placeholder="Enter the flavor for the smoothie recipe" autofocus required autocomplete="off" class="instructions" id="user-instructions">
             <input type="submit" class="submit-button">
         </form>
-        <div class="recipe" id="recipe"></div>
+        <div class="hint">i.e: Vanilla, Strawberry or Banana</div>
+       </div>
+       <div class="recipe hidden" id="recipe"></div>
     </main>
     <footer>
          This was coded by
