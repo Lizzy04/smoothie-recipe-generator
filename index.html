@@ -7,14 +7,16 @@
     <title>AI Smoothie Generator</title>
   </head>
   <body>
+    <div class="recipe-container">
     <header>
     <h1>AI Smoothie Generator</h1>
     </header>
     <main>
         <form>
-            <input type="text" placeholder="Enter the flavor for the smoothie recipe" autofocus required autocomplete="off">
-            <input type="submit">
+            <input type="text" placeholder="Enter the flavor for the smoothie recipe" autofocus required autocomplete="off" class="instructions">
+            <input type="submit" class="submit-button">
         </form>
+        <div class="recipe">Recipe will go here</div>
     </main>
     <footer>
          This was coded by
@@ -27,6 +29,7 @@
         <a href="https://ai-smoothie-recipe-generator.netlify.app/" target="_blank"
           >Netlify</a
     </footer>
+    </div>
     <script src="src/index.js"></script>
   </body>
 </html>
