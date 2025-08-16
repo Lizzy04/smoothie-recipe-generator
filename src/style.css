@@ -61,6 +61,10 @@ form {
   box-shadow: rgba(39, 33, 66, 0.3);
 }
 
+.recipe strong {
+  color: #885df1;
+}
+
 footer {
   text-align: center;
   font-size: 13px;
